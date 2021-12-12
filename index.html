@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Well Organized</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./public/assets/favicon.ico"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./public/assets/well-organized-logo.png" />
+        <pre>                   </pre>
+        <a class="link1" href="">A fazer</a>
+        <h2><pre> | </pre><h2>
+        <a class="link1" href="">Arquivadas</a>
+    </header>
+
+    <div class="btn-adc-tarefa">
+        <img src="./public/assets/task-add-icon.png"/>
+        <pre><a class="link2" href="">  Adicionar Tarefa</a></pre>
+    </div>
+
+    <form id="form-adc-tarefa" action="">
+        <label id="lbl-descricao" for="inpt-desc">Descrição</label>
+        <input type="text" id="inpt-desc">
+
+        <label id="lbl-cor" for="">Cor</label>
+        <div class="btn-cores" id="cor1"></div>
+        <div class="btn-cores" id="cor2"></div>
+        <div class="btn-cores" id="cor3"></div>
+        <div class="btn-cores" id="cor4"></div>
+        <div class="btn-cores" id="cor5"></div>
+        <div class="btn-cores" id="cor6"></div>
+        <div class="btn-cores" id="cor7"></div>
+
+        <input type="submit" value="Adicionar" id="btn-adicionar">
+    </form>
+
+    <div class="card-area">
+        <div class="card">
+            <div class="card-status">
+                <div class="btn-status-card">
+                    <img src="./public/assets/checked.png"/>
+                </div>
+                <div class="txt-card-status">
+                    Concluída
+                </div>
+            </div>
+            <div class="txt-card-concluido">Estudar HTML</div>
+            <div class="card-rodape">
+                <div class="btn-card-arquivar">
+                    <img src="./public/assets/archive-color.png"/>
+                </div>
+                <div class="btn-card-excluir">
+                    <img src="./public/assets/trash-gray-scale.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-area">
+            <div class="card">
+                <div class="card-status">
+                    <div class="btn-status-card">
+                        <img src="./public/assets/unchecked.png"/>
+                    </div>
+                    <div class="txt-card-cabecalho">
+                        A fazer
+                    </div>
+                </div>
+                <div class="txt-card-afazer">Estudar HTML</div>
+                <div class="card-rodape">
+                    <div class="btn-card-arquivar">
+                        <img src="./public/assets/archive-color.png"/>
+                    </div>
+                    <div class="btn-card-excluir">
+                        <img src="./public/assets/trash-gray-scale.png"/>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
