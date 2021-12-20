@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+</head>
+<body>
+    <label for="desc">Descrição</label>
+    <input type="text" name="input-desc" id="desc"><button id="add">Adicionar</button>
+    <ul id="lista"></ul>
+    <script>
+        document.querySelector('#add').addEventListener('click', addItem);
+
+        function addItem() {
+            let desc = document.querySelector('#desc').value;
+            if (desc.trim() === ''){
+                alert('o campo nao pode estar vazio')
+                return;
+            }
+            document.querySelector('#lista').innerHTML += `<li> ${desc} </li>`;
+        }
+    
+    </script>
+</body>
+</html>
