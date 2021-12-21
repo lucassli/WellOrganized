@@ -190,5 +190,9 @@ img{
     margin-right: 8px;
 }
 .btn-card-excluir{
-    margin-right: 8px;
+    margin-right: 4px;
+}
+
+#exluircard{
+    margin: 0cm;
 }

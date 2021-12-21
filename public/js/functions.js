@@ -5,6 +5,7 @@ function adicionar(){
     cardTexto = cardTexto.options[cardTexto.selectedIndex].textContent;
     var cardStatus = document.getElementById("card-status").value;
     
+
     var novo_card = '<div class="card-area">'
     +'<div class="item">'+qtd+'</div>'
     +'<div class="item">'+tp+'</div>'
