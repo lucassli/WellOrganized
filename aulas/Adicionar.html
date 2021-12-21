@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./public/assets/favicon.ico"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <style>
+        span {
+            font-size: .6em;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <title>Exemplo 2</title>
+</head>
+<body>
+    <label for="desc">Descrição</label>
+    <input type="text" name="input-desc" id="desc"><button id="add">Adicionar</button>
+    <ul id="lista"></ul>
+    <script>
+        document.querySelector('#add').addEventListener('click', addItem);
+
+        function addItem() {
+            let desc = document.querySelector('#desc').value;
+            if (desc.trim() === ''){
+                alert('o campo nao pode estar vazio')
+                return;
+            }
+
+            document.querySelector('#lista').innerHTML += `<li> 
+                <div class="card-area">
+        <div class="card">
+            <div class="card-status">
+                <div class="btn-status-card">
+                    <img src="./public/assets/checked.png"/>
+                </div>
+                <div class="txt-card-status">
+                    A fazer
+                </div>
+            </div>
+            <div class="txt-card-afazer">${desc}</div>
+            <div class="card-rodape">
+                <div class="btn-card-arquivar">
+                    <img src="./public/assets/archive-color.png"/>
+                </div>
+                <div class="btn-card-excluir">
+                    <img src="./public/assets/trash-gray-scale.png"/ onclick ="deleteItem(this.parentNode)" >
+                </div>
+            </div>
+        </div>`
+        }
+
+        function deleteItem(item) {
+            alert('Apagar o item: ' + item);
+            document.querySelector('#lista').removeChild();
+        }
+    </script>
+</body>
+</html>
