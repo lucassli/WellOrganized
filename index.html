@@ -24,9 +24,9 @@
         <pre><a class="link2" href="">  Adicionar Tarefa</a></pre>
     </div>
 
-    <form id="form-adc-tarefa" action="">
-        <label id="lbl-descricao" for="inpt-desc">Descrição</label>
-        <input type="text" id="inpt-desc">
+    <form id="form-adc-tarefa">
+        <label for="desc">Descrição</label>
+        <input type="text" name="inpt-desc" id="desc">
 
         <label id="lbl-cor" for="">Cor</label>
         <div class="btn-cores" id="cor1"></div>
@@ -37,49 +37,47 @@
         <div class="btn-cores" id="cor6"></div>
         <div class="btn-cores" id="cor7"></div>
 
-        <input type="submit" value="Adicionar" id="btn-adicionar">
+        <button id="btn-adicionar"> Adicionar </button>
     </form>
+    <ul id="cards"></ul>
+    <script>
+        document.querySelector('#btn-adicionar').addEventListener('click', addItem);
 
-    <div class="card-area">
-        <div class="card">
-            <div class="card-status">
-                <div class="btn-status-card">
-                    <img src="./public/assets/checked.png"/>
-                </div>
-                <div class="txt-card-status">
-                    Concluída
-                </div>
-            </div>
-            <div class="txt-card-concluido">Estudar HTML</div>
-            <div class="card-rodape">
-                <div class="btn-card-arquivar">
-                    <img src="./public/assets/archive-color.png"/>
-                </div>
-                <div class="btn-card-excluir">
-                    <img src="./public/assets/trash-gray-scale.png"/>
-                </div>
-            </div>
-        </div>
+        function addItem() {
+            let desc = document.querySelector('#desc').value;
+            if (desc.trim() === ''){
+                alert('o campo nao pode estar vazio')
+                return;
+            }
 
+            document.querySelector('#cards').innerHTML += `<li>
         <div class="card-area">
             <div class="card">
                 <div class="card-status">
                     <div class="btn-status-card">
-                        <img src="./public/assets/unchecked.png"/>
+                        <img src="./public/assets/checked.png"/>
                     </div>
                     <div class="txt-card-status">
-                         A fazer
+                        A fazer
                     </div>
                 </div>
-                <div class="txt-card-afazer">Estudar HTML</div>
+                <div class="txt-card-afazer">${desc}</div>
                 <div class="card-rodape">
                     <div class="btn-card-arquivar">
                         <img src="./public/assets/archive-color.png"/>
                     </div>
                     <div class="btn-card-excluir">
-                        <img src="./public/assets/trash-gray-scale.png"/>
+                        <img src="./public/assets/trash-gray-scale.png"/ onclick ="deleteItem(this.parentNode)" >
                     </div>
-                </div>
             </div>
+        </div>
+        </li>`
+        }
+
+        function deleteItem(item) {
+            alert('Apagar o item: ' + item);
+            document.querySelector('#cards').removeChild();
+        }
+    </script>
 </body>
 </html>
